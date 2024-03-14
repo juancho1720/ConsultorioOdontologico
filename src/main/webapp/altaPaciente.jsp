@@ -5,7 +5,7 @@
     <%@include file="components/sidebar.jsp" %>
     <%@include file="components/navbar.jsp" %>
     <%@include file="components/main.jsp" %>
-    <h1>Alta de odontólogo</h1>
+    <h1>Alta de paciente</h1>
     <form class="user">
         <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
@@ -56,7 +56,7 @@
         </div>
         </div>
         <a href="" class="btn btn-primary btn-user btn-block col-sm-6">
-            Registrar Odontólogo
+            Registrar Paciente
         </a>
         <hr>
         

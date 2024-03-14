@@ -62,12 +62,26 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones:</h6>
                         <a class="collapse-item" href="">Ver Pacientes</a>
-                        <a class="collapse-item" href="">Alta Pacientes</a>
+                        <a class="collapse-item" href="altaPaciente.jsp">Alta Pacientes</a>
                     </div>
                 </div>
             </li>
 
-            
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#usuarios"
+                    aria-expanded="true" aria-controls="usuarios">
+                    <i class="fas fa-solid fa-user"></i>
+                    <span>Usuarios</span>
+                </a>
+                <div id="usuarios" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="">Ver Usuarios</a>
+                        <a class="collapse-item" href="altaUsuario.jsp">Alta Usuarios</a>
+                    </div>
+                </div>
+            </li>
 
         </ul>
         <!-- End of Sidebar -->
