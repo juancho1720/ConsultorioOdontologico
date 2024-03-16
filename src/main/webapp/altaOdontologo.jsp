@@ -9,55 +9,55 @@
     <form class="user">
         <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
-                <input type="text" class="form-control form-control-user" id="nombre"
+                <input type="text" class="form-control form-control-user" name="nombre"
                        placeholder="Nombre">
             </div>
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" id="Apellido"
+            <input type="text" class="form-control form-control-user" name="Apellido"
                    placeholder="Apellido">
         </div>
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" id="dni"
+            <input type="text" class="form-control form-control-user" name="dni"
                    placeholder="DNI">
         </div>
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" id="telefono"
+            <input type="text" class="form-control form-control-user" name="telefono"
                    placeholder="Telefono">
         </div>
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" id="direccion"
+            <input type="text" class="form-control form-control-user" name="direccion"
                    placeholder="Direccion">
         </div>
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" id="fecha_nac"
+            <input type="text" class="form-control form-control-user" name="fecha_nac"
                    placeholder="Fecha de nacimiento">
         </div>
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" id="especialidad"
+            <input type="text" class="form-control form-control-user" name="especialidad"
                    placeholder="Especialidad">
         </div>
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" id="horario"
+            <input type="text" class="form-control form-control-user" name="horario"
                    placeholder="Horario">
         </div>
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" id="usuario"
+            <input type="text" class="form-control form-control-user" name="usuario"
                    placeholder="Usuario">
         </div>
         </div>
