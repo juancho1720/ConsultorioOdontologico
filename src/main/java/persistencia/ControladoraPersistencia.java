@@ -1,5 +1,6 @@
 package persistencia;
 
+import java.util.List;
 import logica.Usuario;
 
 
@@ -20,7 +21,15 @@ public class ControladoraPersistencia {
     
     
     public void crearUsuario(Usuario usu) {
+        
         usuarioJPA.create(usu);
+    
+    }
+
+    public List<Usuario> getUsuarios() {
+    
+        return usuarioJPA.findUsuarioEntities();
+        
     }
     
 }

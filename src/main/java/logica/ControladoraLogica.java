@@ -1,5 +1,6 @@
 package logica;
 
+import java.util.List;
 import persistencia.ControladoraPersistencia;
 
 
@@ -14,6 +15,12 @@ public class ControladoraLogica {
         usu.setContrasenia(contrasenia);
         usu.setRol(rol);
         controlPersis.crearUsuario(usu);
+        
+    }
+
+    public List<Usuario> getUsuarios() {
+        
+        return controlPersis.getUsuarios();
         
     }
     
