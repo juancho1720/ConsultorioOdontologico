@@ -1,7 +1,9 @@
 logica\Usuario.class
+servlets\SvEditarUsuarios.class
 logica\Persona.class
 logica\Turno.class
 persistencia\UsuarioJpaController.class
+servlets\SvEliminarUsuarios.class
 persistencia\ResponsableJpaController.class
 persistencia\OdontologoJpaController.class
 persistencia\exceptions\PreexistingEntityException.class

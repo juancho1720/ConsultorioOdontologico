@@ -54,14 +54,14 @@
                                     <form name="eliminar" action="SvEliminarUsuarios" method="POST">
                                         <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color: red; margin-right: 5px">
                                             <i class="fas fa-trash-alt"></i> Eliminar
-                                        </button>
-                                        <input type="hidden" name="id" value="<% usu.getId_usuario(); %>">
+                                        </button>                                        
+                                        <input type="hidden" name="id_eliminar" value="<%= usu.getId_usuario() %>">
                                     </form>
-                                    <form name="editar" action="SvEditarUsuarios" method="POST">
+                                    <form name="editar" action="SvEditarUsuarios" method="GET">
                                         <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 5px">
                                             <i class="fas fa-pencil-alt"></i> Editar
                                         </button>
-                                        <input type="hidden" name="id" value="<% usu.getId_usuario(); %>">
+                                        <input type="hidden" name="id_editar" value="<%= usu.getId_usuario() %>">
                                     </form>
                                 </td>
                             </tr>
