@@ -22,5 +22,14 @@
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <% 
+        HttpSession misession = request.getSession();
+        String usuario = (String)request.getSession().getAttribute("usuario");
+        
+        if(usuario == null){
+            response.sendRedirect("sinLogin.jsp");
+        }
+
+        %>
 
 </head>
