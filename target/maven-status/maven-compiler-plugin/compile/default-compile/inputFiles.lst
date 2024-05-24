@@ -13,6 +13,8 @@ C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\jav
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\servlets\SvEditarUsuarios.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\persistencia\ControladoraPersistencia.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\persistencia\HorarioJpaController.java
+C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\servlets\SvLogin.java
+C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\servlets\SvOdontologo.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\logica\Usuario.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\logica\Horario.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\persistencia\TurnoJpaController.java

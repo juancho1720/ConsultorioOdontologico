@@ -3,6 +3,7 @@ package persistencia;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import logica.Odontologo;
 import logica.Usuario;
 import persistencia.exceptions.NonexistentEntityException;
 
@@ -18,7 +19,7 @@ public class ControladoraPersistencia {
     TurnoJpaController turnoJPA = new TurnoJpaController();
     
     UsuarioJpaController usuarioJPA = new UsuarioJpaController();
-
+    
     
 
     
@@ -58,6 +59,12 @@ public class ControladoraPersistencia {
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void CrearOdontologo(Odontologo odonto) {
+        
+        odontoJPA.create(odonto);
+        
     }
     
 }

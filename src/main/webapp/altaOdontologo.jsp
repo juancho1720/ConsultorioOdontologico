@@ -6,7 +6,7 @@
     <%@include file="components/navbar.jsp" %>
     <%@include file="components/main.jsp" %>
     <h1>Alta de odontólogo</h1>
-    <form class="user">
+    <form class="user" action="SvOdontologo" method="POST">
         <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
                 <input type="text" class="form-control form-control-user" name="nombre"
@@ -15,7 +15,7 @@
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" name="Apellido"
+            <input type="text" class="form-control form-control-user" name="apellido"
                    placeholder="Apellido">
         </div>
         </div>
@@ -61,9 +61,9 @@
                    placeholder="Usuario">
         </div>
         </div>
-        <a href="" class="btn btn-primary btn-user btn-block col-sm-6">
+        <button type="submit" class="btn btn-primary btn-user btn-block col-sm-6">
             Registrar Odontólogo
-        </a>
+        </button>
         <hr>
         
     </form>
