@@ -66,5 +66,11 @@ public class ControladoraPersistencia {
         odontoJPA.create(odonto);
         
     }
+
+    public List<Odontologo> getOdontologos() {
+        
+        return odontoJPA.findOdontologoEntities();
+        
+    }
     
 }

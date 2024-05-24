@@ -83,5 +83,11 @@ public class ControladoraLogica {
         controlPersis.CrearOdontologo(odonto);
         
     }
+
+    public List<Odontologo> getOdontologos() {
+        
+        return controlPersis.getOdontologos();
+        
+    }
     
 }
