@@ -2,6 +2,7 @@ C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\jav
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\persistencia\exceptions\PreexistingEntityException.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\logica\Turno.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\com\mycompany\turnosodontologicos\JakartaRestConfiguration.java
+C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\servlets\SvEditarOdontologos.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\logica\ControladoraLogica.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\persistencia\PacienteJpaController.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\persistencia\exceptions\IllegalOrphanException.java
@@ -13,6 +14,7 @@ C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\jav
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\servlets\SvEditarUsuarios.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\persistencia\ControladoraPersistencia.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\persistencia\HorarioJpaController.java
+C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\servlets\SvPaciente.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\servlets\SvLogin.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\servlets\SvOdontologo.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\logica\Usuario.java
@@ -21,6 +23,7 @@ C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\jav
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\servlets\SvUsuario.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\logica\Odontologo.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\persistencia\ResponsableJpaController.java
+C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\servlets\SvEliminarOdontologo.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\persistencia\OdontologoJpaController.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\logica\Responsable.java
 C:\Users\usuario\Documents\NetBeansProjects\ConsultorioOdontologico\src\main\java\logica\Persona.java

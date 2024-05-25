@@ -2,6 +2,7 @@ package logica;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import persistencia.ControladoraPersistencia;
 
@@ -106,6 +107,32 @@ public class ControladoraLogica {
     public void editarOdontologo(Odontologo odonto) {
         
         controlPersis.editarOdontologo(odonto);
+        
+    }
+
+    public void crearPaciente(String nombre, String apellido, String dni, String telefono, String direccion, java.sql.Date fecha_sql, String tipoSangre, int id_responsable) {
+        
+        Paciente paciente = new Paciente();
+        paciente.setNombre(nombre);
+        paciente.setApellido(apellido);
+        paciente.setDni(dni);
+        paciente.setTelefono(telefono);
+        paciente.setDireccion(direccion);
+        paciente.setFecha_nac(fecha_sql);
+        paciente.setTipo_sangre(tipoSangre);
+        paciente.setTiene_OS(true);
+        Responsable res = new Responsable();
+        if(id_responsable == 0){
+            res = null;
+        }
+        else{
+            res.setId(id_responsable);
+        }
+         
+        
+        paciente.setResponsable(res);
+        
+        controlPersis.crearPaciente(paciente);
         
     }
     

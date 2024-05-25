@@ -5,6 +5,7 @@ logica\Turno.class
 persistencia\UsuarioJpaController.class
 servlets\SvEliminarUsuarios.class
 persistencia\ResponsableJpaController.class
+servlets\SvPaciente.class
 persistencia\OdontologoJpaController.class
 persistencia\exceptions\PreexistingEntityException.class
 persistencia\ControladoraPersistencia.class
@@ -13,11 +14,15 @@ servlets\SvUsuario.class
 persistencia\SecretarioJpaController.class
 logica\Odontologo.class
 com\mycompany\turnosodontologicos\JakartaRestConfiguration.class
+servlets\SvLogin.class
 com\mycompany\turnosodontologicos\resources\JakartaEE8Resource.class
 logica\ControladoraLogica.class
 persistencia\HorarioJpaController.class
 logica\Paciente.class
+servlets\SvOdontologo.class
 logica\Horario.class
+servlets\SvEliminarOdontologo.class
+servlets\SvEditarOdontologos.class
 logica\Secretario.class
 persistencia\PacienteJpaController.class
 persistencia\PersonaJpaController.class
