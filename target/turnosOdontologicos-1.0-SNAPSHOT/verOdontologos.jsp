@@ -59,7 +59,7 @@
                                         </button>                                        
                                         <input type="hidden" name="id_eliminar" value="<%= odonto.getId() %>">
                                     </form>
-                                    <form name="editar" action="SvEditarOdontologo" method="GET">
+                                    <form name="editar" action="SvEditarOdontologos" method="GET">
                                         <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 5px">
                                             <i class="fas fa-pencil-alt"></i> Editar
                                         </button>

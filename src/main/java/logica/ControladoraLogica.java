@@ -96,5 +96,17 @@ public class ControladoraLogica {
         controlPersis.borrarOdontologo(id);
         
     }
+
+    public Odontologo traerOdontologo(int id) {
+        
+        return controlPersis.traerOdonto(id);
+        
+    }
+
+    public void editarOdontologo(Odontologo odonto) {
+        
+        controlPersis.editarOdontologo(odonto);
+        
+    }
     
 }

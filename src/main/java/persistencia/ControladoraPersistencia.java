@@ -82,5 +82,21 @@ public class ControladoraPersistencia {
         }
         
     }
+
+    public Odontologo traerOdonto(int id) {
+       
+        return odontoJPA.findOdontologo(id);
+        
+    }
+
+    public void editarOdontologo(Odontologo odonto) {
+        
+        try {
+            odontoJPA.edit(odonto);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     
 }
