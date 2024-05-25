@@ -89,5 +89,12 @@ public class ControladoraLogica {
         return controlPersis.getOdontologos();
         
     }
+
+    public void borrarOdontologo(int id) {
+        
+        
+        controlPersis.borrarOdontologo(id);
+        
+    }
     
 }
