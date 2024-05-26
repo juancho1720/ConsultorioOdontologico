@@ -135,5 +135,11 @@ public class ControladoraLogica {
         controlPersis.crearPaciente(paciente);
         
     }
+
+    public List<Paciente> getPacientes() {
+        
+        return controlPersis.getPacientes();
+        
+    }
     
 }

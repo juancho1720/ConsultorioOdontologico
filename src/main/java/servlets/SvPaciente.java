@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -12,7 +14,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import logica.ControladoraLogica;
+import logica.Paciente;
 
 
 @WebServlet(name = "SvPaciente", urlPatterns = {"/SvPaciente"})
@@ -29,7 +33,16 @@ public class SvPaciente extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+            
+            List<Paciente> listaPacientes = new ArrayList<Paciente>();
+            
+            listaPacientes = control.getPacientes();
+            
+            HttpSession sesion = request.getSession();
+            sesion.setAttribute("listaPacientes", listaPacientes);
+        
+            response.sendRedirect("verPacientes.jsp");
+            
     }
 
 
@@ -54,6 +67,7 @@ public class SvPaciente extends HttpServlet {
             String tipoSangre = request.getParameter("tipoSangre");                   
             String test = request.getParameter("responsable");
             int id_responsable;
+            //Ver inserción de INPUT vacío
             if(test.equalsIgnoreCase("")){
                 id_responsable = 0;
             }else{

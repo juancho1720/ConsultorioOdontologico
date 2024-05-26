@@ -105,5 +105,11 @@ public class ControladoraPersistencia {
         pacienteJPA.create(paciente);
         
     }
+
+    public List<Paciente> getPacientes() {
+        
+        return pacienteJPA.findPacienteEntities();
+        
+    }
     
 }

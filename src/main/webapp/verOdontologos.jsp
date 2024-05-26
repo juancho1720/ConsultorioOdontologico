@@ -42,8 +42,7 @@
                             </tr>
                         </tfoot>
 
-                        <%                            List<Odontologo> listaOdontologos = (List) request.getSession().getAttribute("listaOdontologos");
-                        %>
+                        <% List<Odontologo> listaOdontologos = (List) request.getSession().getAttribute("listaOdontologos"); %>
 
                         <tbody>
                             <% for (Odontologo odonto : listaOdontologos) {%>

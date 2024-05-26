@@ -1,3 +1,6 @@
+<%@page import="java.util.Optional"%>
+<%@page import="logica.Responsable"%>
+<%@page import="logica.Paciente"%>
 <%@page import="logica.Odontologo"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -29,7 +32,8 @@
                             <tr>
                                 <th>Apellido</th>
                                 <th>Nombre</th>
-                                <th>Especialidad</th>
+                                <th>Teléfono</th>
+                                <th>Tipo de sangre</th>
                                 <<th style="width: 210px">Acción</th>
                             </tr>
                         </thead>
@@ -37,32 +41,38 @@
                             <tr>
                                 <th>Apellido</th>
                                 <th>Nombre</th>
-                                <th>Rol</th>
+                                <th>Teléfono</th>
+                                <th>Tipo de sangre</th>
                                 <<th style="width: 210px">Acción</th>
                             </tr>
                         </tfoot>
 
-                        <% List<Odontologo> listaOdontologos = (List) request.getSession().getAttribute("listaOdontologos"); %>
+                        <%  List<Paciente> listaPacientes = (List) request.getSession().getAttribute("listaPacientes"); 
+                            
+                        %>
 
                         <tbody>
-                            <% for (Odontologo odonto : listaOdontologos) {%>
-
+                            <% for (Paciente paciente : listaPacientes) { %>
+                        
                             <tr>
-                                <td><%= odonto.getApellido() %></td>
-                                <td><%= odonto.getNombre() %></td>
-                                <td><%= odonto.getEspecialidad() %> </td>
+                                <td><%= paciente.getApellido()%></td>
+                                <td><%= paciente.getNombre()%></td>
+                                <td><%= paciente.getTelefono()%> </td>
+                                <td><%= paciente.getTipo_sangre()%></td>
+                                
+
                                 <<td style="display: flex; width: 230px;">
                                     <form name="eliminar" action="SvEliminarOdontologo" method="POST">
                                         <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color: red; margin-right: 5px">
                                             <i class="fas fa-trash-alt"></i> Eliminar
                                         </button>                                        
-                                        <input type="hidden" name="id_eliminar" value="<%= odonto.getId() %>">
+                                        <input type="hidden" name="id_eliminar" value="<%= paciente.getId()%>">
                                     </form>
                                     <form name="editar" action="SvEditarOdontologos" method="GET">
                                         <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 5px">
                                             <i class="fas fa-pencil-alt"></i> Editar
                                         </button>
-                                        <input type="hidden" name="id_editar" value="<%= odonto.getId() %>">
+                                        <input type="hidden" name="id_editar" value="<%= paciente.getId()%>">
                                     </form>
                                 </td>
                             </tr>
