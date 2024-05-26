@@ -8,15 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import logica.ControladoraLogica;
 
-@WebServlet(name = "SvEliminarOdontologo", urlPatterns = {"/SvEliminarOdontologo"})
-public class SvEliminarOdontologo extends HttpServlet {
+
+@WebServlet(name = "SvEliminarPaciente", urlPatterns = {"/SvEliminarPaciente"})
+public class SvEliminarPaciente extends HttpServlet {
+
 
     ControladoraLogica control = new ControladoraLogica();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-
+        
     }
 
 
@@ -25,19 +26,21 @@ public class SvEliminarOdontologo extends HttpServlet {
             throws ServletException, IOException {
         
     }
-    
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         int id = Integer.parseInt(request.getParameter("id_eliminar"));
-        control.borrarOdontologo(id);
         
-        response.sendRedirect("SvOdontologo");
+        control.borrarPaciente(id);
+        
+        response.sendRedirect("SvPaciente");
+        
     }
 
-    
+
     @Override
     public String getServletInfo() {
         return "Short description";

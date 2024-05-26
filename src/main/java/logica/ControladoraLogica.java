@@ -141,5 +141,11 @@ public class ControladoraLogica {
         return controlPersis.getPacientes();
         
     }
+
+    public void borrarPaciente(int id) {
+        
+        controlPersis.borrarPaciente(id);
+        
+    }
     
 }

@@ -111,5 +111,15 @@ public class ControladoraPersistencia {
         return pacienteJPA.findPacienteEntities();
         
     }
+
+    public void borrarPaciente(int id) {
+        
+        try {
+            pacienteJPA.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     
 }
