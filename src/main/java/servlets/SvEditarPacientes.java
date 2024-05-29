@@ -61,7 +61,7 @@ public class SvEditarPacientes extends HttpServlet {
             Date fecha_nac = formato.parse(fecha);
             java.sql.Date fecha_sql = new java.sql.Date(fecha_nac.getTime());
             String tipo_sangre = request.getParameter("tipoSangre");
-            int id_responsable = Integer.parseInt("responsable");
+            int id_responsable = Integer.parseInt(request.getParameter("responsable"));
             
             Paciente paciente = (Paciente)request.getSession().getAttribute("pacienteEdit");
             
@@ -75,6 +75,8 @@ public class SvEditarPacientes extends HttpServlet {
             Responsable res = new Responsable();
             res.setId(id_responsable);
             paciente.setResponsable(res);
+            
+            System.out.println("nombre: " + nombre);
             
             control.editarPaciente(paciente);
             

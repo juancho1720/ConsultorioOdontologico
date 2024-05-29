@@ -1,6 +1,7 @@
 logica\Usuario.class
 servlets\SvEditarUsuarios.class
 logica\Persona.class
+servlets\SvEditarPacientes.class
 logica\Turno.class
 persistencia\UsuarioJpaController.class
 servlets\SvEliminarUsuarios.class
@@ -24,6 +25,7 @@ logica\Horario.class
 servlets\SvEliminarOdontologo.class
 servlets\SvEditarOdontologos.class
 logica\Secretario.class
+servlets\SvEliminarPaciente.class
 persistencia\PacienteJpaController.class
 persistencia\PersonaJpaController.class
 logica\Responsable.class
