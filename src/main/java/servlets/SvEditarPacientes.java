@@ -13,20 +13,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import logica.ControladoraLogica;
-import logica.Horario;
-import logica.Odontologo;
-import logica.Usuario;
+import logica.Paciente;
+import logica.Responsable;
 
 
-@WebServlet(name = "SvEditarOdontologos", urlPatterns = {"/SvEditarOdontologos"})
-public class SvEditarOdontologos extends HttpServlet {
-    
+@WebServlet(name = "SvEditarPacientes", urlPatterns = {"/SvEditarPacientes"})
+public class SvEditarPacientes extends HttpServlet {
+
     ControladoraLogica control = new ControladoraLogica();
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        
     }
 
 
@@ -34,26 +32,25 @@ public class SvEditarOdontologos extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        
         int id = Integer.parseInt(request.getParameter("id_editar"));
-
         
-        Odontologo odonto = control.traerOdontologo(id);
+        Paciente paciente = control.traerPaciente(id);
         
         HttpSession sesion = request.getSession();
-        sesion.setAttribute("odontoEdit", odonto);
+        sesion.setAttribute("pacienteEdit", paciente);
         
-        response.sendRedirect("editarOdonto.jsp");
+        response.sendRedirect("editarPaciente.jsp");
         
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
         try {
             SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
-
+            
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");
             String dni = request.getParameter("dni");
@@ -63,36 +60,31 @@ public class SvEditarOdontologos extends HttpServlet {
             String fecha = request.getParameter("fecha_nac");
             Date fecha_nac = formato.parse(fecha);
             java.sql.Date fecha_sql = new java.sql.Date(fecha_nac.getTime());
-            String especialidad = request.getParameter("especialidad");
-            //TODO: Agregar drop down list para las opciones
-            int id_horario = Integer.parseInt(request.getParameter("horario"));
-            int id_usuario = Integer.parseInt(request.getParameter("usuario"));
+            String tipo_sangre = request.getParameter("tipoSangre");
+            int id_responsable = Integer.parseInt("responsable");
             
-            Odontologo odonto = (Odontologo)request.getSession().getAttribute("odontoEdit");
+            Paciente paciente = (Paciente)request.getSession().getAttribute("pacienteEdit");
             
-            odonto.setNombre(nombre);
-            odonto.setApellido(apellido);
-            odonto.setDni(dni);
-            odonto.setTelefono(telefono);
-            odonto.setDireccion(direccion);
-            odonto.setFecha_nac(fecha_sql);
-            odonto.setEspecialidad(especialidad);
-            Horario hora = new Horario();
-            hora.setId_horario(id_horario);
-            odonto.setHorario(hora);
-            Usuario usu = new Usuario();
-            usu.setId_usuario(id_usuario);
-            odonto.setUsuario(usu);
+            paciente.setNombre(nombre);
+            paciente.setApellido(apellido);
+            paciente.setDni(dni);
+            paciente.setTelefono(telefono);
+            paciente.setDireccion(direccion);
+            paciente.setFecha_nac(fecha_sql);
+            paciente.setTipo_sangre(tipo_sangre);
+            Responsable res = new Responsable();
+            res.setId(id_responsable);
+            paciente.setResponsable(res);
             
-            control.editarOdontologo(odonto);
+            control.editarPaciente(paciente);
             
-            response.sendRedirect("SvOdontologo");
-
+            response.sendRedirect("SvPaciente");
+            
         } catch (ParseException ex) {
-            Logger.getLogger(SvOdontologo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SvEditarPacientes.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
+
 
     @Override
     public String getServletInfo() {

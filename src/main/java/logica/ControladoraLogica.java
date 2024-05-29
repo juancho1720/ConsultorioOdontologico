@@ -147,5 +147,17 @@ public class ControladoraLogica {
         controlPersis.borrarPaciente(id);
         
     }
+
+    public Paciente traerPaciente(int id) {
+        
+       return controlPersis.traerPaciente(id);
+        
+    }
+
+    public void editarPaciente(Paciente paciente) {
+        
+        controlPersis.editarPaciente(paciente);
+        
+    }
     
 }

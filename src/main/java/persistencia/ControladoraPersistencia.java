@@ -121,5 +121,21 @@ public class ControladoraPersistencia {
         }
         
     }
+
+    public Paciente traerPaciente(int id) {
+        
+        return pacienteJPA.findPaciente(id);
+        
+    }
+
+    public void editarPaciente(Paciente paciente) {
+        
+        try {
+            pacienteJPA.edit(paciente);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     
 }
