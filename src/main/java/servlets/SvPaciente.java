@@ -73,8 +73,6 @@ public class SvPaciente extends HttpServlet {
             }else{
                 id_responsable = Integer.parseInt(test);
             }
-             
-            System.out.println("Id responsable: " + id_responsable);
             
             control.crearPaciente(nombre, apellido, dni, telefono, direccion, fecha_sql, tipoSangre, id_responsable);
             

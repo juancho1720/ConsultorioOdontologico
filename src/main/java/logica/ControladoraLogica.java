@@ -159,5 +159,23 @@ public class ControladoraLogica {
         controlPersis.editarPaciente(paciente);
         
     }
+
+    public void crearTurno(String observacion, String horario, int id_paciente, int id_odonto, java.sql.Date fecha_sql) {
+        
+        Turno turno = new Turno();
+        Paciente pac = new Paciente();
+        pac.setId(id_paciente);
+        Odontologo odon = new Odontologo();
+        odon.setId(id_odonto);
+        
+        turno.setAfeccion(observacion);
+        turno.setHorario(horario);
+        turno.setFecha_turno(fecha_sql);
+        turno.setOdonto(odon);
+        turno.setPacien(pac);
+        
+        controlPersis.crearTurno(turno);
+        
+    }
     
 }

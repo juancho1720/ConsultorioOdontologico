@@ -5,6 +5,7 @@ servlets\SvEditarPacientes.class
 logica\Turno.class
 persistencia\UsuarioJpaController.class
 servlets\SvEliminarUsuarios.class
+servlets\SvTurno.class
 persistencia\ResponsableJpaController.class
 servlets\SvPaciente.class
 persistencia\OdontologoJpaController.class
