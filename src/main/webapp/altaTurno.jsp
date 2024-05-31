@@ -11,8 +11,9 @@
     <form class="user" action="SvTurno" method="POST">
         <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
+                <label for="fecha" class="form-label">Fecha turno</label>
                 <input type="date" class="form-control form-control-user" name="fechaTurno"
-                       placeholder="Fecha Turno">
+                       placeholder="Fecha Turno" id="fecha">
             </div>
         </div>
         <div class="form-group row">

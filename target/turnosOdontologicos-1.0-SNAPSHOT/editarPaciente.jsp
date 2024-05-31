@@ -44,8 +44,9 @@
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" name="fecha_nac"
-                   placeholder="Fecha de nacimiento" value="<%= pac.getFecha_nac() %>">
+            <label for="fecha" class="form-label">Fecha de nacimiento</label>
+            <input type="date" class="form-control form-control-user" name="fecha_nac"
+                   placeholder="Fecha de nacimiento" id="fecha" value="<%= pac.getFecha_nac() %>">
         </div>
         </div>
         <div class="form-group row">

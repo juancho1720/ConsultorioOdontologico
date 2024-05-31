@@ -54,7 +54,7 @@ public class SvOdontologo extends HttpServlet {
 
         
         try {
-            SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
             
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");

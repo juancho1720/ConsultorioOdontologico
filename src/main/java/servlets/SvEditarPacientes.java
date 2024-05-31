@@ -49,14 +49,13 @@ public class SvEditarPacientes extends HttpServlet {
             throws ServletException, IOException {
         
         try {
-            SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
             
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");
             String dni = request.getParameter("dni");
             String telefono = request.getParameter("telefono");
             String direccion = request.getParameter("direccion");
-            //TODO: Agregar un datepicker para evitar errores por el formate del Date
             String fecha = request.getParameter("fecha_nac");
             Date fecha_nac = formato.parse(fecha);
             java.sql.Date fecha_sql = new java.sql.Date(fecha_nac.getTime());
