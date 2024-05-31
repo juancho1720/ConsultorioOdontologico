@@ -177,5 +177,11 @@ public class ControladoraLogica {
         controlPersis.crearTurno(turno);
         
     }
+
+    public List<Turno> getTurnos() {
+        
+        return controlPersis.getTurnos();
+        
+    }
     
 }

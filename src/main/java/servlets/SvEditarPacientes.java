@@ -75,8 +75,6 @@ public class SvEditarPacientes extends HttpServlet {
             res.setId(id_responsable);
             paciente.setResponsable(res);
             
-            System.out.println("nombre: " + nombre);
-            
             control.editarPaciente(paciente);
             
             response.sendRedirect("SvPaciente");

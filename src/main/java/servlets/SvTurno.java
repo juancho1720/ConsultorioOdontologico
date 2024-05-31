@@ -3,16 +3,19 @@ package servlets;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.json.JsonObject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import logica.ControladoraLogica;
+import logica.Turno;
 
 
 @WebServlet(name = "SvTurno", urlPatterns = {"/SvTurno"})
@@ -30,6 +33,13 @@ public class SvTurno extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        List<Turno> listaTurnos = new ArrayList<Turno>();
+        listaTurnos = control.getTurnos();
+        
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("listaTurnos", listaTurnos);
+        
+        response.sendRedirect("verTurnos.jsp");
     }
 
 
