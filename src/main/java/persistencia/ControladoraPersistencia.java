@@ -150,5 +150,15 @@ public class ControladoraPersistencia {
         return turnoJPA.findTurnoEntities();
         
     }
+
+    public void borrarTurno(int id) {
+        
+        try {
+            turnoJPA.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     
 }

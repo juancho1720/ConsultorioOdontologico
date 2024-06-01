@@ -183,5 +183,11 @@ public class ControladoraLogica {
         return controlPersis.getTurnos();
         
     }
+
+    public void borrarTurno(int id) {
+        
+        controlPersis.borrarTurno(id);
+        
+    }
     
 }
