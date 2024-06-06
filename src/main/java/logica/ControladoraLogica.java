@@ -189,5 +189,18 @@ public class ControladoraLogica {
         controlPersis.borrarTurno(id);
         
     }
+
+    public Turno TraerTurno(int id) {
+        
+        return controlPersis.traerTurno(id);
+        
+    }
+
+
+    public void editTurno(Turno turno) {
+        
+        controlPersis.editTurno(turno);
+        
+    }
     
 }

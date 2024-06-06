@@ -160,5 +160,24 @@ public class ControladoraPersistencia {
         }
         
     }
+
+    public Turno traerTurno(int id) {
+        
+        return turnoJPA.findTurno(id);
+        
+    }
+
+
+    public void editTurno(Turno turno) {
+        
+        try {
+            turnoJPA.edit(turno);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    
     
 }
