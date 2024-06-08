@@ -1,3 +1,4 @@
+<%@page import="logica.ControladoraLogica"%>
 <%@page import="logica.Turno"%>
 <%@page import="java.util.Optional"%>
 <%@page import="logica.Responsable"%>
@@ -47,18 +48,18 @@
                             </tr>
                         </tfoot>
 
-                        <%  List<Turno> listaTurnos = (List) request.getSession().getAttribute("listaTurnos"); 
-                            
+                        <%  List<Turno> listaTurnos = (List) request.getSession().getAttribute("listaTurnos");
+                            ControladoraLogica control = new ControladoraLogica();
                         %>
 
                         <tbody>
                             <% for (Turno tur : listaTurnos) { %>
                         
                             <tr>
-                                <td><%= tur.getFecha_turno().getDate() %>/<%= tur.getFecha_turno().getMonth() %>/<%= tur.getFecha_turno().getYear() + 1900 %></td>
+                                <td><%= tur.getFecha_turno().getDate() %>/<%= tur.getFecha_turno().getMonth() + 1 %>/<%= tur.getFecha_turno().getYear() + 1900 %></td>
                                 <td><%= tur.getHorario() %></td>
-                                <td><%= tur.getPacien().getId() %> </td>
-                                <td><%= tur.getOdonto().getId() %></td>
+                                <td><%= control.traerPaciente(tur.getPacien().getId()).getApellido()%>, <%= control.traerPaciente(tur.getPacien().getId()).getNombre() %> </td>
+                                <td><%= control.traerOdontologo(tur.getOdonto().getId()).getApellido()%>, <%= control.traerOdontologo(tur.getOdonto().getId()).getNombre()%></td>
                                 
 
                                 <<td style="display: flex; width: 230px;">
