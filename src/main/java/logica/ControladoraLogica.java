@@ -203,4 +203,16 @@ public class ControladoraLogica {
         
     }
     
+    
+    public List<Horario> getHorarios() {
+        
+        return controlPersis.getHorarios();
+        
+    }
+    
+    public List<Responsable> getResponsables() {
+        
+        return controlPersis.getResponsables();
+    }
+    
 }

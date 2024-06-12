@@ -55,10 +55,7 @@ public class SvTurno extends HttpServlet {
             String horario = request.getParameter("horario");
             int id_paciente = Integer.parseInt(request.getParameter("paciente"));
             int id_odonto = Integer.parseInt(request.getParameter("odontologo"));
-            
             String fecha = request.getParameter("fechaTurno");
-            
-
             Date fecha_nac;
             fecha_nac = formato.parse(fecha);
             java.sql.Date fecha_sql = new java.sql.Date(fecha_nac.getTime());

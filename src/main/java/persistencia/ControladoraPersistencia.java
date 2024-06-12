@@ -3,8 +3,10 @@ package persistencia;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import logica.Horario;
 import logica.Odontologo;
 import logica.Paciente;
+import logica.Responsable;
 import logica.Turno;
 import logica.Usuario;
 import persistencia.exceptions.NonexistentEntityException;
@@ -175,6 +177,18 @@ public class ControladoraPersistencia {
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+    }
+
+    public List<Horario> getHorarios() {
+        
+        return horaJPA.findHorarioEntities();
+        
+    }
+
+    public List<Responsable> getResponsables() {
+        
+        return responsableJPA.findResponsableEntities();
         
     }
 
