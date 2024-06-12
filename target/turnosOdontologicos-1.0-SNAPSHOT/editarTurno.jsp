@@ -1,3 +1,9 @@
+<%@page import="logica.Paciente"%>
+<%@page import="logica.Odontologo"%>
+<%@page import="logica.Horario"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="logica.ControladoraLogica"%>
 <%@page import="logica.Turno"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,9 +13,17 @@
     <%@include file="components/navbar.jsp" %>
     <%@include file="components/main.jsp" %>
     
-    <h1>Alta Turnos</h1>
+    <h1>Editar Turno</h1>
     
-    <% Turno turno = (Turno)request.getSession().getAttribute("turnoEdit"); %>
+    <% Turno turno = (Turno)request.getSession().getAttribute("turnoEdit"); 
+       ControladoraLogica control = new ControladoraLogica();
+       List<Horario> listaHorarios = new ArrayList<Horario>();
+       listaHorarios = control.getHorarios();
+       List<Odontologo> listaOdonto = new ArrayList<Odontologo>();
+       listaOdonto = control.getOdontologos();
+       List<Paciente> listaPacientes = new ArrayList<Paciente>();
+       listaPacientes = control.getPacientes();
+    %>
     
     <form class="user" action="SvEditarTurno" method="POST">
         <div class="form-group row">
@@ -20,21 +34,36 @@
             </div>
         </div>
         <div class="form-group row">
-            <div class="col-sm-6 mb-3 mb-sm-0">
-                <input type="text" class="form-control form-control-user" name="horario"
-                       placeholder="Horario" value="<%= turno.getHorario()%>">
-            </div>
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <label for="horario" class="form-label">Horario</label>
+            <select class="btn btn-secondary dropdown-toggle" name="horario" id="horario" style="width: inherit; text-align: left">
+                <option><%= turno.getHorario() %></option>
+                <% for (Horario hor : listaHorarios) { %>
+                <option class="dropdown-item"> <%= hor.getHora_inicio() %> - <%= hor.getHora_fin() %> </option>               
+                <% } %>
+            </select>
+        </div>
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" name="odontologo"
-                   placeholder="Odontologo" value="<%= turno.getOdonto().getId() %>">
+            <label for="odonto" class="form-label">Odontólogo</label>
+            <select class="btn btn-secondary dropdown-toggle" id="odonto" name="odontologo" style="width: inherit; text-align: left">
+                <option value="<%= turno.getOdonto().getId() %>"><%= turno.getOdonto().getApellido()%>, <%= turno.getOdonto().getNombre() %></option>
+                <% for (Odontologo odo : listaOdonto) { %>             
+                <option class="dropdown-item" value="<%= odo.getId() %>"> <%= odo.getApellido() %>, <%= odo.getNombre() %> </option>               
+                <% } %>
+            </select>
         </div>
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" name="paciente"
-                   placeholder="Paciente" value="<%= turno.getPacien().getId() %>">
+            <label for="paciente" class="form-label">Paciente</label>
+            <select class="btn btn-secondary dropdown-toggle" id="paciente" name="paciente" style="width: inherit; text-align: left">
+                <option value="<%= turno.getPacien().getId() %>"><%= turno.getPacien().getApellido()%>, <%= turno.getPacien().getNombre() %></option>
+                <% for (Paciente pac : listaPacientes) { %>
+                <option class="dropdown-item" value="<%= pac.getId() %>"> <%= pac.getApellido() %>, <%= pac.getNombre() %> </option>               
+                <% } %>
+            </select>
         </div>
         </div>
         <div class="col-sm-6 mb-3">
