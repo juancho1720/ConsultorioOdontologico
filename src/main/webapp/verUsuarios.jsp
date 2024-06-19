@@ -51,17 +51,17 @@
                                 <td><%= usu.getNombre_usuario() %></td>
                                 <td><%= usu.getRol() %></td>
                                 <<td style="display: flex; width: 230px;">
-                                    <form name="eliminar" action="SvEliminarUsuarios" method="POST">
-                                        <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color: red; margin-right: 5px">
+                                    <form id="eliminarUsuario" name="eliminar" action="SvEliminarUsuarios" method="POST">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block btn_prueba" style="background-color: red; margin-right: 5px">
                                             <i class="fas fa-trash-alt"></i> Eliminar
                                         </button>                                        
-                                        <input type="hidden" name="id_eliminar" value="<%= usu.getId_usuario() %>">
+                                        <input type="hidden" id="id_eliminar" name="id_eliminar" value="<%= usu.getId_usuario() %>">
                                     </form>
                                     <form name="editar" action="SvEditarUsuarios" method="GET">
-                                        <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 5px">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block btn_editar" style="margin-left: 5px">
                                             <i class="fas fa-pencil-alt"></i> Editar
                                         </button>
-                                        <input type="hidden" name="id_editar" value="<%= usu.getId_usuario() %>">
+                                        <input type="hidden" id="id_editar" name="id_editar" value="<%= usu.getId_usuario() %>">
                                     </form>
                                 </td>
                             </tr>

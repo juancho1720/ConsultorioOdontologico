@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="logica.Paciente"%>
 <%@page import="logica.Odontologo"%>
 <%@page import="logica.Horario"%>
@@ -23,6 +24,9 @@
        listaOdonto = control.getOdontologos();
        List<Paciente> listaPacientes = new ArrayList<Paciente>();
        listaPacientes = control.getPacientes();
+       SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+       String fechaTurno = formato.format(turno.getFecha_turno());
+       System.out.println("Fecha Turno: " + turno.getFecha_turno());
     %>
     
     <form class="user" action="SvEditarTurno" method="POST">
@@ -30,7 +34,7 @@
             <div class="col-sm-6 mb-3 mb-sm-0">
                 <label for="fecha" class="form-label">Fecha turno</label>
                 <input type="date" class="form-control form-control-user" name="fechaTurno"
-                       placeholder="Fecha Turno" id="fecha" value="<%= turno.getFecha_turno() %>">
+                       placeholder="Fecha Turno" id="fecha" value="<%= fechaTurno %>">
             </div>
         </div>
         <div class="form-group row">

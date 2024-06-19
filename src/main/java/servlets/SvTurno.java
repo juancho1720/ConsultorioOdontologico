@@ -14,8 +14,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 import logica.ControladoraLogica;
 import logica.Turno;
+
 
 
 @WebServlet(name = "SvTurno", urlPatterns = {"/SvTurno"})
@@ -49,17 +51,21 @@ public class SvTurno extends HttpServlet {
         
         try {
             SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-            
-            
             String observacion = request.getParameter("observacion");
             String horario = request.getParameter("horario");
-            int id_paciente = Integer.parseInt(request.getParameter("paciente"));
-            int id_odonto = Integer.parseInt(request.getParameter("odontologo"));
+            String paciente = request.getParameter("paciente");
+            int id_paciente = Integer.parseInt(paciente);
+            String odonto = request.getParameter("odontologo");
+            int id_odonto = Integer.parseInt(odonto);
             String fecha = request.getParameter("fechaTurno");
             Date fecha_nac;
             fecha_nac = formato.parse(fecha);
             java.sql.Date fecha_sql = new java.sql.Date(fecha_nac.getTime());
-
+            
+            if(observacion.equals("")){
+                response.sendRedirect("altaTurno.jsp");
+            }
+            
             control.crearTurno(observacion, horario, id_paciente, id_odonto, fecha_sql);
             
             response.sendRedirect("index.jsp");

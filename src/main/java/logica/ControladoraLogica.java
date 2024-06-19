@@ -45,9 +45,9 @@ public class ControladoraLogica {
         
     }
 
-    public boolean comprobarIngreso(String usuario, String contrasenia) {
+    public Usuario comprobarIngreso(String usuario, String contrasenia) {
         
-        boolean ingreso = false;
+        Usuario user = null;
         
         List<Usuario> listaUsuarios = new ArrayList<Usuario>();
         listaUsuarios = controlPersis.getUsuarios();
@@ -55,12 +55,12 @@ public class ControladoraLogica {
         for(Usuario usu : listaUsuarios){
             if(usu.getNombre_usuario().equals(usuario)){
                 if(usu.getContrasenia().equals(contrasenia)){
-                    ingreso = true;
+                    user = usu;
                 }
             }
         }
         
-        return ingreso;
+        return user;
         
     }
 

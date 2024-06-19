@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <body id="page-top">
+    <% String rol = (String) request.getSession().getAttribute("rol"); %>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -33,11 +34,11 @@
             <div class="sidebar-heading">
                 GESTIÓN
             </div>
-            
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#turnos"
-                    aria-expanded="true" aria-controls="turnos">
+                   aria-expanded="true" aria-controls="turnos">
                     <i class="fas fa-hospital-user"></i>
                     <span>Turnos</span>
                 </a>
@@ -50,27 +51,11 @@
                     </div>
                 </div>
             </li>
-            
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-hospital-user"></i>
-                    <span>Odontólogos</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Acciones:</h6>
-                        <a class="collapse-item" href="SvOdontologo">Ver Odontólogos</a>
-                        <a class="collapse-item" href="altaOdontologo.jsp">Alta Odontólogos</a>
-                    </div>
-                </div>
-            </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                   aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-solid fa-user"></i>
                     <span>Pacientes</span>
                 </a>
@@ -83,14 +68,41 @@
                 </div>
             </li>
 
+            <!-- Nav Item - Pages Collapse Menu -->
+            <% 
+                if (rol.equals("Secretario") || rol.equals("Admin")) {
+            %>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-hospital-user"></i>
+                    <span>Odontólogos</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="SvOdontologo">Ver Odontólogos</a>
+                        <a class="collapse-item" href="altaOdontologo.jsp">Alta Odontólogos</a>
+                    </div>
+                </div>
+            </li>
+
+            <% } %>
+
+
+            <%
+                if (rol.equals("Admin")) {
+            %>
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#usuarios"
-                    aria-expanded="true" aria-controls="usuarios">
+                   aria-expanded="true" aria-controls="usuarios">
                     <i class="fas fa-solid fa-user"></i>
                     <span>Usuarios</span>
                 </a>
                 <div id="usuarios" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones:</h6>
                         <a class="collapse-item" href="SvUsuario">Ver Usuarios</a>
@@ -98,6 +110,6 @@
                     </div>
                 </div>
             </li>
-
+            <% }%>
         </ul>
         <!-- End of Sidebar -->

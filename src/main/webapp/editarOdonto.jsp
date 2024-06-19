@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="logica.Usuario"%>
 <%@page import="logica.Horario"%>
 <%@page import="java.util.ArrayList"%>
@@ -20,6 +21,8 @@
        listaHorarios = control.getHorarios();
        List<Usuario> listaUsuarios = new ArrayList<Usuario>();
        listaUsuarios = control.getUsuarios();
+       SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+       String fechaNac = formato.format(odonto.getFecha_nac());
     %>
     
     <form class="user" action="SvEditarOdontologos" method="POST">
@@ -63,7 +66,7 @@
         <div class="col-sm-6 mb-3 mb-sm-0">
             <label for="fecha" class="form-label">Fecha de nacimiento</label>
             <input type="date" class="form-control form-control-user" name="fecha_nac"
-                   placeholder="Fecha de nacimiento" id="fecha" value="<%= odonto.getFecha_nac() %>">
+                   placeholder="Fecha de nacimiento" id="fecha" value="<%= fechaNac %>">
         </div>
         </div>
         <div class="form-group row">

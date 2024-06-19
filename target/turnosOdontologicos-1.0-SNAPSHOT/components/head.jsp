@@ -21,7 +21,9 @@
     
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+    
+    <link href="./sweetAlert/sweetalert.css" rel="stylesheet" type="text/css"/>
+    
     <% 
         HttpSession misession = request.getSession();
         String usuario = (String)request.getSession().getAttribute("usuario");

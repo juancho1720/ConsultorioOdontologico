@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="logica.Responsable"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -18,6 +19,8 @@
        ControladoraLogica control = new ControladoraLogica();
        List<Responsable> listaResponsables = new ArrayList<Responsable>();
        listaResponsables = control.getResponsables();
+       SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+       String fechaNac = formato.format(pac.getFecha_nac());
     %>
     
     <form class="user" action="SvEditarPacientes" method="POST">
@@ -61,7 +64,7 @@
         <div class="col-sm-6 mb-3 mb-sm-0">
             <label for="fecha" class="form-label">Fecha de nacimiento</label>
             <input type="date" class="form-control form-control-user" name="fecha_nac"
-                   placeholder="Fecha de nacimiento" id="fecha" value="<%= pac.getFecha_nac() %>">
+                   placeholder="Fecha de nacimiento" id="fecha" value="<%= fechaNac %>">
         </div>
         </div>
         <div class="form-group row">

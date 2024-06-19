@@ -23,6 +23,8 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
-
-
+    
+    <script src="./sweetAlert/sweetalert.js" type="text/javascript"></script>
+    <script src="./js/funcionesUsuario.js" type="text/javascript"></script>
+    
 </body>
