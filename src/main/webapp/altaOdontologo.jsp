@@ -79,7 +79,7 @@
             <label for="horario" class="form-label">Horario</label>
             <select class="btn btn-secondary dropdown-toggle" id="horario" name="horario" style="width: inherit; text-align: left">
                 <% for (Horario hor : listaHorarios) { %>
-                <option class="dropdown-item"> <%= hor.getHora_inicio() %> - <%= hor.getHora_fin() %> </option>               
+                <option class="dropdown-item" value="<%= hor.getId_horario() %>"> <%= hor.getHora_inicio() %> - <%= hor.getHora_fin() %> </option>               
                 <% } %>
             </select>
         </div>

@@ -35,11 +35,13 @@ public class SvLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String usuario = request.getParameter("usuario");
         String contrasenia = request.getParameter("contrasenia");
-        
         Usuario validacion = null;
-        
+        String rol = null;
+        String user = null;
+
         validacion = control.comprobarIngreso(usuario, contrasenia);
         
         if(validacion != null){
@@ -47,31 +49,29 @@ public class SvLogin extends HttpServlet {
             List<Odontologo> listaOdonto = new ArrayList<Odontologo>();
             listaOdonto = control.getOdontologos();
             HttpSession misession = request.getSession(true);
-            
-            
-            String rol = validacion.getRol();
-            misession.setAttribute("rol", rol);
+            user = usuario;
+            rol = validacion.getRol();
             String nombre;
             int id_odonto;
             
             for(Odontologo odo : listaOdonto){
                 if(odo.getUsuario().getId_usuario() == validacion.getId_usuario()){
-                    
                     id_odonto = odo.getId();
                     nombre = odo.getApellido() + ", " + odo.getNombre();
                     misession.setAttribute("id_odonto", id_odonto);
-                    misession.setAttribute("nombre", nombre);
-                    
-                    
+                    misession.setAttribute("nombre", nombre);               
                 }
             }
-            misession.setAttribute("usuario", usuario);
+            misession.setAttribute("rol", rol);
+            misession.setAttribute("usuario", user);
             
             response.sendRedirect("index.jsp");
             
         }
         else{
+            
             response.sendRedirect("loginError.jsp");
+            
         }
         
     }

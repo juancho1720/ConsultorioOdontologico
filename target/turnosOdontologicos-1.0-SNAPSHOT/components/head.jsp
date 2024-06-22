@@ -18,20 +18,19 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    
+
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    
+
     <link href="./sweetAlert/sweetalert.css" rel="stylesheet" type="text/css"/>
-    
-    <% 
-        HttpSession misession = request.getSession();
-        String usuario = (String)request.getSession().getAttribute("usuario");
+
+    <%
+        String rol = (String)request.getSession().getAttribute("rol");
         
-        if(usuario == null){
+        if (rol == null) {
+        
             response.sendRedirect("sinLogin.jsp");
         }
-
-        %>
+    %>
 
 </head>

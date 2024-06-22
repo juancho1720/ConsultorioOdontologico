@@ -1,7 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
+<% 
+   String roli = (String)request.getSession().getAttribute("rol");
+%>
+
 <body id="page-top">
-    <% String rol = (String) request.getSession().getAttribute("rol"); %>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -70,7 +73,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <% 
-                if (rol.equals("Secretario") || rol.equals("Admin")) {
+                if (roli.equals("Secretario") || roli.equals("Admin")) {
             %>
 
             <li class="nav-item">
@@ -92,7 +95,7 @@
 
 
             <%
-                if (rol.equals("Admin")) {
+                if (roli.equals("Admin")) {
             %>
 
             <li class="nav-item">

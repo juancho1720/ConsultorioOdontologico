@@ -26,7 +26,6 @@
        listaPacientes = control.getPacientes();
        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
        String fechaTurno = formato.format(turno.getFecha_turno());
-       System.out.println("Fecha Turno: " + turno.getFecha_turno());
     %>
     
     <form class="user" action="SvEditarTurno" method="POST">
