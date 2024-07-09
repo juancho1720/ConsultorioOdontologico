@@ -58,24 +58,26 @@ public class SvPaciente extends HttpServlet {
             String dni = request.getParameter("dni");
             String telefono = request.getParameter("telefono");
             String direccion = request.getParameter("direccion");           
-            String fecha = request.getParameter("fecha_nac");
-            Date fecha_nac;           
-            fecha_nac = formato.parse(fecha);
-            java.sql.Date fecha_sql = new java.sql.Date(fecha_nac.getTime());
+            String fecha = request.getParameter("fecha_nac");                  
             String tipoSangre = request.getParameter("tipoSangre");                   
-            String test = request.getParameter("responsable");
-            int id_responsable;
-            //Ver inserción de INPUT vacío
-            if(test.equalsIgnoreCase("")){
-                id_responsable = 0;
+            String responsable = request.getParameter("responsable");
+            
+            if(nombre.equals("") || apellido.equals("") || dni.equals("") || telefono.equals("") || direccion.equals("") || fecha.equals("")
+                    || tipoSangre.equals("") || responsable.equals("")){
+            
+                response.sendRedirect("llenarCamposPac.jsp");
+                
             }else{
-                id_responsable = Integer.parseInt(test);
+               
+                Date fecha_nac = formato.parse(fecha);
+                java.sql.Date fecha_sql = new java.sql.Date(fecha_nac.getTime());
+                int id_responsable = Integer.parseInt(responsable);
+                
+                control.crearPaciente(nombre, apellido, dni, telefono, direccion, fecha_sql, tipoSangre, id_responsable);
+            
+                response.sendRedirect("index.jsp");
+                
             }
-            
-            control.crearPaciente(nombre, apellido, dni, telefono, direccion, fecha_sql, tipoSangre, id_responsable);
-            
-            response.sendRedirect("index.jsp");
-            
         } catch (ParseException ex) {
             Logger.getLogger(SvPaciente.class.getName()).log(Level.SEVERE, null, ex);
         }

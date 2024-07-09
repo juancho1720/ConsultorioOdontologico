@@ -49,9 +49,17 @@ public class SvUsuario extends HttpServlet {
         String contrasenia = request.getParameter("contrasenia");
         String rol = request.getParameter("rol");
         
-        controladora.crearUsuario(nombreUsuario, contrasenia, rol);
+        if(nombreUsuario.equals("") || contrasenia.equals("") || rol.equals("")){
+            
+            response.sendRedirect("llenarCamposUsu.jsp");
+            
+        }else{
+            controladora.crearUsuario(nombreUsuario, contrasenia, rol);
         
         response.sendRedirect("index.jsp");
+        }
+        
+        
         
     }
 

@@ -5,6 +5,8 @@
     <%@include file="components/sidebar.jsp" %>
     <%@include file="components/navbar.jsp" %>
     <%@include file="components/main.jsp" %>
+    
+    <div class="ml-3">
     <h1>Alta de usuario</h1>
     <form class="user" action="SvUsuario" method="POST">
         <div class="form-group row">
@@ -28,9 +30,11 @@
         <button type="submit" class="btn btn-primary btn-user btn-block col-sm-6">
             Registrar Usuario
         </button>
-        <hr>
+       
         
     </form>
+    
+    </div>
 
 
     <%@include file="components/footer.jsp" %>

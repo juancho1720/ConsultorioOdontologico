@@ -25,7 +25,7 @@
         String fechaActual = sdf.format(todaydate);
     %>
 
-    <h2>Turnos para hoy</h2>
+    <h2 class="ml-3">Turnos para hoy</h2>
     <hr> 
 
     <div class="container-fluid">

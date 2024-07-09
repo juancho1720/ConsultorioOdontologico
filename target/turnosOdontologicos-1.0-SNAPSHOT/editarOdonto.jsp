@@ -12,6 +12,8 @@
     <%@include file="components/sidebar.jsp" %>
     <%@include file="components/navbar.jsp" %>
     <%@include file="components/main.jsp" %>
+    
+    <div class="ml-3">
     <h1>Edición de odontólogo</h1>
     
     <% 
@@ -94,9 +96,10 @@
         <button type="submit" class="btn btn-primary btn-user btn-block col-sm-6">
             Modificar Datos 
         </button>
-        <hr>
+       
         
     </form>
+    </div>
 
 
     <%@include file="components/footer.jsp" %>

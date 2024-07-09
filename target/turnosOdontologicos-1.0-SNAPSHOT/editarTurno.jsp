@@ -14,6 +14,7 @@
     <%@include file="components/navbar.jsp" %>
     <%@include file="components/main.jsp" %>
     
+    <div class="ml-3">
     <h1>Editar Turno</h1>
     
     <% Turno turno = (Turno)request.getSession().getAttribute("turnoEdit"); 
@@ -76,10 +77,10 @@
         <button type="submit" class="btn btn-primary btn-user btn-block col-sm-6">
             Editar Turno
         </button>
-        <hr>
+        
         
     </form>
-    
+    </div>
     
     <%@include file="components/footer.jsp" %>
     <%@include file="components/scripts.jsp" %>

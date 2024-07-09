@@ -52,22 +52,28 @@ public class SvTurno extends HttpServlet {
             SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
             String observacion = request.getParameter("observacion");
             String horario = request.getParameter("horario");
-            String paciente = request.getParameter("paciente");
-            int id_paciente = Integer.parseInt(paciente);
+            String paciente = request.getParameter("paciente");     
             String odonto = request.getParameter("odontologo");
-            int id_odonto = Integer.parseInt(odonto);
             String fecha = request.getParameter("fechaTurno");
-            Date fecha_nac;
-            fecha_nac = formato.parse(fecha);
-            java.sql.Date fecha_sql = new java.sql.Date(fecha_nac.getTime());
+
+            if(observacion.equals("") || horario.equals("") || paciente.equals("") || odonto.equals("") || fecha.equals("")){
+                
+                response.sendRedirect("llenarCamposTur.jsp");
+                
+            }else{
+                
+                int id_paciente = Integer.parseInt(paciente);
+                int id_odonto = Integer.parseInt(odonto);
+                Date fecha_nac = formato.parse(fecha);
+                java.sql.Date fecha_sql = new java.sql.Date(fecha_nac.getTime());
+                
+                control.crearTurno(observacion, horario, id_paciente, id_odonto, fecha_sql);
             
-            if(observacion.equals("")){
-                response.sendRedirect("altaTurno.jsp");
+                response.sendRedirect("index.jsp");
+            
             }
             
-            control.crearTurno(observacion, horario, id_paciente, id_odonto, fecha_sql);
             
-            response.sendRedirect("index.jsp");
             
         } catch (ParseException ex) {
             Logger.getLogger(SvTurno.class.getName()).log(Level.SEVERE, null, ex);

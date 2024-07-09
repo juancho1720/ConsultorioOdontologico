@@ -7,6 +7,8 @@
     <%@include file="components/navbar.jsp" %>
     <%@include file="components/main.jsp" %>
     
+    
+    <div class="ml-3">
     <h1>Edición de usuario</h1>
     
     <% Usuario usu = (Usuario)request.getSession().getAttribute("usuEdit"); %>
@@ -33,10 +35,10 @@
         <button type="submit" class="btn btn-primary btn-user btn-block col-sm-6">
             Editar Usuario
         </button>
-        <hr>
+        
         
     </form>
-
+    </div>
 
     <%@include file="components/footer.jsp" %>
     <%@include file="components/scripts.jsp" %>

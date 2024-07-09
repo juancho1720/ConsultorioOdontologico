@@ -18,7 +18,7 @@
     List<Horario> listaHorarios = new ArrayList<Horario>();
     listaHorarios = control.getHorarios();
     %>
-    
+    <div class="ml-3">
     <h1>Alta de odontólogo</h1>
     <form class="user" action="SvOdontologo" method="POST">
         <div class="form-group row">
@@ -68,6 +68,7 @@
         <div class="col-sm-6 mb-3 mb-sm-0">
             <label for="usuario" class="form-label">Usuario</label>
             <select class="btn btn-secondary dropdown-toggle" id="usuario" name="usuario" style="width: inherit; text-align: left">
+                <option></option>
                 <% for (Usuario usu : listaUsuarios) { %>
                 <option class="dropdown-item" value="<%= usu.getId_usuario() %>"> <%= usu.getNombre_usuario() %></option>               
                 <% } %>
@@ -78,6 +79,7 @@
         <div class="col-sm-6 mb-3 mb-sm-0">
             <label for="horario" class="form-label">Horario</label>
             <select class="btn btn-secondary dropdown-toggle" id="horario" name="horario" style="width: inherit; text-align: left">
+                <option></option>
                 <% for (Horario hor : listaHorarios) { %>
                 <option class="dropdown-item" value="<%= hor.getId_horario() %>"> <%= hor.getHora_inicio() %> - <%= hor.getHora_fin() %> </option>               
                 <% } %>
@@ -87,9 +89,10 @@
         <button type="submit" class="btn btn-primary btn-user btn-block col-sm-6">
             Registrar Odontólogo
         </button>
-        <hr>
+       
         
     </form>
+    </div>
 
 
     <%@include file="components/footer.jsp" %>

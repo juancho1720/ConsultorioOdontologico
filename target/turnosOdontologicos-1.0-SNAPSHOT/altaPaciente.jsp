@@ -17,6 +17,7 @@
     listaResponsables = control.getResponsables();
     %>
     
+    <div class="ml-3">
     <h1>Alta de paciente</h1>
     <form class="user" action="SvPaciente" method="POST">
         <div class="form-group row">
@@ -55,14 +56,6 @@
                    placeholder="Tipo de sangre">
         </div>
         </div>
-        <div class="col-sm-6 mb-3 mb-sm-0">
-            <label for="responsable" class="form-label">Responsable</label>
-            <select class="btn btn-secondary dropdown-toggle" id="responsable" name="responsable" style="width: inherit; text-align: left">
-                <% for (Responsable res : listaResponsables) { %>
-                <option class="dropdown-item" value="<%= res.getId() %>"> <%= res.getApellido()%>, <%= res.getNombre() %></option>               
-                <% } %>
-            </select>
-        </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
             <label for="fecha" class="form-label">Fecha de nacimiento</label>
@@ -70,14 +63,25 @@
                    placeholder="Fecha de nacimiento" id="fecha">
         </div>
         </div>
-        <div class="form-group row">       
+        <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <label for="responsable" class="form-label">Responsable</label>
+            <select class="btn btn-secondary dropdown-toggle" id="responsable" name="responsable" style="width: inherit; text-align: left">
+                <option></option>
+                <% for (Responsable res : listaResponsables) { %>
+                <option class="dropdown-item" value="<%= res.getId() %>"> <%= res.getApellido()%>, <%= res.getNombre() %></option>               
+                <% } %>
+            </select>
+        </div>
         </div>
         <button type="submit" class="btn btn-primary btn-user btn-block col-sm-6">
             Registrar Paciente
         </button>
-        <hr>
+        
         
     </form>
+            
+    </div>
 
 
     <%@include file="components/footer.jsp" %>

@@ -22,6 +22,7 @@
        listaHorarios = control.getHorarios();
     %>
     
+    <div class="ml-3">
     <h1>Alta Turnos</h1>
 
     <form class="user" action="SvTurno" method="POST">
@@ -36,6 +37,7 @@
         <div class="col-sm-6 mb-3 mb-sm-0">
             <label for="horario" class="form-label">Horario</label>
             <select class="btn btn-secondary dropdown-toggle" name="horario" id="horario" style="width: inherit; text-align: left">
+                <option></option>
                 <% for (Horario hor : listaHorarios) { %>
                 <option class="dropdown-item"> <%= hor.getHora_inicio() %> - <%= hor.getHora_fin() %> </option>               
                 <% } %>
@@ -46,6 +48,7 @@
         <div class="col-sm-6 mb-3 mb-sm-0">
             <label for="paciente" class="form-label">Paciente</label>
             <select class="btn btn-secondary dropdown-toggle" id="paciente" name="paciente" style="width: inherit; text-align: left">
+                <option></option>
                 <% for (Paciente pac : listaPacientes) { %>
                 <option class="dropdown-item" value="<%= pac.getId() %>"> <%= pac.getApellido() %>, <%= pac.getNombre() %> </option>               
                 <% } %>
@@ -56,6 +59,7 @@
         <div class="col-sm-6 mb-3 mb-sm-0">
             <label for="odonto" class="form-label">Odontólogo</label>
             <select class="btn btn-secondary dropdown-toggle" id="odonto" name="odontologo" style="width: inherit; text-align: left">
+                <option></option>
                 <% for (Odontologo odo : listaOdonto) { %>
                 <option class="dropdown-item" value="<%= odo.getId() %>"> <%= odo.getApellido() %>, <%= odo.getNombre() %> </option>               
                 <% } %>
@@ -72,7 +76,7 @@
         <hr>
         
     </form>
-    
+    </div>
     
     <%@include file="components/footer.jsp" %>
     <%@include file="components/scripts.jsp" %>

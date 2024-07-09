@@ -61,20 +61,30 @@ public class SvOdontologo extends HttpServlet {
             String dni = request.getParameter("dni");
             String telefono = request.getParameter("telefono");
             String direccion = request.getParameter("direccion");
-            
-             //TODO: Agregar un datepicker para evitar errores por el formate del Date
             String fecha = request.getParameter("fecha_nac");
-            Date fecha_nac = formato.parse(fecha);
-            java.sql.Date fecha_sql = new java.sql.Date(fecha_nac.getTime());
             String especialidad = request.getParameter("especialidad");
+            String horario = request.getParameter("horario");
+            String usuario = request.getParameter("usuario");
             
-            //TODO: Agregar drop down list para las opciones
-            int id_horario = Integer.parseInt(request.getParameter("horario"));
-            int id_usuario = Integer.parseInt(request.getParameter("usuario"));
+            if(nombre.equals("") || apellido.equals("") || dni.equals("") || telefono.equals("") || direccion.equals("") || fecha.equals("")
+                    || horario.equals("") || usuario.equals("")){
+                    
+                response.sendRedirect("llenarCamposOdo.jsp");
+                
+            }else{
+                
+                Date fecha_nac = formato.parse(fecha);
+                java.sql.Date fecha_sql = new java.sql.Date(fecha_nac.getTime());
+                int id_horario = Integer.parseInt(horario);
+                int id_usuario = Integer.parseInt(usuario);
+                
+                controladora.crearOdontologo(nombre, apellido, dni, telefono, direccion, fecha_sql, especialidad, id_horario, id_usuario);
+            
+                response.sendRedirect("index.jsp");
+                
+            }
         
-            controladora.crearOdontologo(nombre, apellido, dni, telefono, direccion, fecha_sql, especialidad, id_horario, id_usuario);
             
-            response.sendRedirect("index.jsp");
             
         } catch (ParseException ex) {
             Logger.getLogger(SvOdontologo.class.getName()).log(Level.SEVERE, null, ex);
