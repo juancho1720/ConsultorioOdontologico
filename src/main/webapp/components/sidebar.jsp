@@ -34,8 +34,9 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones:</h6>
                         <a class="collapse-item" href="altaTurno.jsp">Alta Turnos</a>
-                        <a class="collapse-item" href="SvTurno">Ver turnos por fecha</a>
-                        <a class="collapse-item" href="SvTurnoFecha">Ver turnos por paciente</a>              
+                        <a class="collapse-item" href="SvTurno">Ver todos los turnos</a>
+                        <a class="collapse-item" href="verPacientesXFecha.jsp">Ver turnos por fecha</a>
+                        <a class="collapse-item" href="busquedaXPaciente.jsp">Ver turnos por paciente</a>              
                     </div>
                 </div>
             </li>
