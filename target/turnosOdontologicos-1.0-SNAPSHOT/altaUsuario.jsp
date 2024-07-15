@@ -23,8 +23,13 @@
         </div>
         <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" name="rol"
-                   placeholder="Rol">
+            <label for="horario" class="form-label">Horario</label>
+            <select class="btn btn-secondary dropdown-toggle" name="rol" id="horario" style="width: inherit; text-align: left">
+                <option></option>
+                <option>Admin</option>
+                <option>Odontologo</option>
+                <option>Secretario</option>
+            </select>
         </div>
         </div>
         <button type="submit" class="btn btn-primary btn-user btn-block col-sm-6">

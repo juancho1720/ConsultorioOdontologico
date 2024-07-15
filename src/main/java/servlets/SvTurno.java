@@ -21,7 +21,8 @@ import logica.Turno;
 public class SvTurno extends HttpServlet {
 
     ControladoraLogica control = new ControladoraLogica();
-    List<Turno> listaTurnos = control.getTurnos();
+    
+    
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -31,7 +32,8 @@ public class SvTurno extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
+        List<Turno> listaTurnos = control.getTurnos();
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listaTurnos", listaTurnos);
 
@@ -61,7 +63,8 @@ public class SvTurno extends HttpServlet {
             Boolean reservado = false;
             Date fecha_nac = formato.parse(fecha);
             java.sql.Date fecha_sql = new java.sql.Date(fecha_nac.getTime());
-
+            List<Turno> listaTurnos = control.getTurnos();
+            
             for (Turno tur : listaTurnos) {
 
                 if (tur.getOdonto().getId() == id_odonto && tur.getHorario().equals(horario) && tur.getFecha_turno().compareTo(fecha_sql) == 0) {
